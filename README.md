@@ -1,16 +1,16 @@
 # aws_cicd
 #!/bin/bash
-exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
+<!-- exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1 -->
 set -xe
 
 REGION="YOUR_AWS_REGION"   # e.g. ap-south-1
 
 # Update & basic tools
-apt-get update -y
-apt-get install -y ruby-full wget curl unzip
+sudo apt-get update -y
+sudo apt-get install -y ruby-full wget curl unzip
 
 # Java 17
-apt-get install -y openjdk-17-jdk
+sudo apt-get install -y openjdk-17-jdk
 java -version
 
 # Install CodeDeploy agent

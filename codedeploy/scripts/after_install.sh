@@ -6,8 +6,9 @@ if [ -f /opt/myapp/demo-0.0.1-SNAPSHOT.jar ]; then
 fi
 
 # Install/refresh systemd unit
-cp -f /opt/codedeploy-agent/deployment-root/deployment-*/deployment-*/codedeploy/application.service /etc/systemd/system/myapp.service || \
-cp -f $(pwd)/codedeploy/application.service /etc/systemd/system/myapp.service
+# cp -f /opt/codedeploy-agent/deployment-root/deployment-*/deployment-*/codedeploy/application.service /etc/systemd/system/myapp.service || \
+# cp -f $(pwd)/codedeploy/application.service /etc/systemd/system/myapp.service
+cp -f /opt/myapp/application.service /etc/systemd/system/myapp.service
 
 chmod 644 /etc/systemd/system/myapp.service
 systemctl daemon-reload

@@ -3,6 +3,8 @@ os: linux
 files:
   - source: target/demo-0.0.1-SNAPSHOT.jar
     destination: /opt/myapp
+  - source: codedeploy/application.service
+    destination: /opt/myapp  
     # "rename" ensures the jar is consistently named app.jar
     # CodeDeploy doesn't natively support rename in 'files', so we'll do it in scripts.
 hooks:
