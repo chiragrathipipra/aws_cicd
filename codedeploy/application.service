@@ -1,0 +1,14 @@
+[Unit]
+Description=Spring Boot Application
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/opt/myapp
+ExecStart=/usr/bin/java -jar /opt/myapp/app.jar
+Restart=always
+RestartSec=10
+Environment=JAVA_TOOL_OPTIONS="-XX:+UseContainerSupport"
+
+[Install]
+WantedBy=multi-user.target
